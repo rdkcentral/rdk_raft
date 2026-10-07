@@ -25,29 +25,15 @@ import os
 import sys
 import time
 import re
-import yaml
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
 sys.path.append(os.path.join(dir_path, "../../raft/"))
 
-command_templates_dir = os.path.join(dir_path, 'commands')
-AUDIO_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_audioinfo_frame.yaml')
-AVI_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_aviinfo_frame.yaml')
-DRM_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_drminfo_frame.yaml')
-CONNECTION_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_connection_status.yaml')
-HDCP_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_hdcp_status.yaml')
-SIGNAL_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_signal_status.yaml')
-SPD_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_spdinfo_frame.yaml')
-VENDOR_SPECIFIC_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_vendorspecificinfo_frame.yaml')
-VIDEO_FORMAT_CHANGE_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_videoformat_change.yaml')
-VRR_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_vrr_status.yaml')
-
 from framework.core.logModule import logModule
 from framework.core.commandModules.sshConsole import sshConsole
 from .abstractHdmiController import HdmiInterface
 from framework.plugins.ut_raft.utUserResponse import utUserResponse
-import yaml
 
 class manualHdmiController(HdmiInterface):
     """

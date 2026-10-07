@@ -31,7 +31,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
 sys.path.append(os.path.join(dir_path, "../../raft/"))
 
-command_templates_dir = os.path.join(dir_path, 'commands')
+command_templates_dir = os.path.join(dir_path, '../../../../raft/framework/plugins/ut_raft/controlCommands/hdmiinput')
 AUDIO_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_audioinfo_frame.yaml')
 AVI_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_aviinfo_frame.yaml')
 DRM_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_drminfo_frame.yaml')
