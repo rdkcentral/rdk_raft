@@ -82,3 +82,31 @@ class Controller:
         cls, platform: str, session: Any, prompt: str = "~#", port: int = 8080
     ) -> object:
         return cls.create("thermal_sensor", platform, session, prompt, port)
+
+
+if __package__:
+    from .controllers.deepSleepController import DeepSleepController
+    from .controllers.dutRebootController import DutRebootController
+    from .controllers.firmwareUpdateController import FirmwareUpdateController
+    from .controllers.hdmiController import HdmiInputController, HdmiOutputController
+    from raft.framework.core.compositeController import CompositeController
+    from raft.framework.core.heatGeneratorController import HeatGeneratorController
+    from raft.framework.core.motionGeneratorController import MotionGeneratorController
+else:
+    from controllers.deepSleepController import DeepSleepController
+    from controllers.dutRebootController import DutRebootController
+    from controllers.firmwareUpdateController import FirmwareUpdateController
+    from controllers.hdmiController import HdmiInputController, HdmiOutputController
+    from compositeController import CompositeController
+    from heatGeneratorController import HeatGeneratorController
+    from motionGeneratorController import MotionGeneratorController
+
+
+Controller.register("boot", DutRebootController)
+Controller.register("firmware_update", FirmwareUpdateController)
+Controller.register("deep_sleep", DeepSleepController)
+Controller.register("composite_input", CompositeController)
+Controller.register("hdmi_input", HdmiInputController)
+Controller.register("hdmi_output", HdmiOutputController)
+Controller.register("motion_sensor", MotionGeneratorController)
+Controller.register("thermal_sensor", HeatGeneratorController)
