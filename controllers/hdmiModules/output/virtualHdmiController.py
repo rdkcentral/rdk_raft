@@ -27,7 +27,9 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
 sys.path.append(os.path.join(dir_path, "../../tests/raft/"))
 
-command_templates_dir = os.path.join(dir_path, 'commands')
+command_templates_dir = os.path.join(
+    dir_path, '../../../../raft/framework/plugins/ut_raft/controlCommands/hdmioutput'
+)
 EDID_READ_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_edid_read.yaml')
 FRAME_RATE_CHANGED_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_frame_rate_changed.yaml')
 HDCP_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hdcp_status.yaml')
